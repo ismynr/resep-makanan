@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Api\BahanApiController;
+use App\Http\Controllers\Api\KategoriApiController;
+use App\Http\Controllers\Api\ResepApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -16,4 +19,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::name('api.')->group(function() {
+    Route::apiResource('bahan', BahanApiController::class);
+    Route::apiResource('kategori', KategoriApiController::class);
+    Route::apiResource('resep', ResepApiController::class);
 });

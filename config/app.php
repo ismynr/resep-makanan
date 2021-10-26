@@ -54,6 +54,10 @@ return [
 
     'url' => env('APP_URL', 'http://localhost'),
 
+    'api_port' => env('APP_API_PORT', '8001'),
+
+    'api_url' => env('APP_URL', 'http://localhost') . ':' . env('APP_API_PORT', '8001'),
+
     'asset_url' => env('ASSET_URL', null),
 
     /*

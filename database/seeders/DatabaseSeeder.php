@@ -2,6 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\Bahan;
+use App\Models\Kategori;
+use App\Models\Resep;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,6 +16,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        Kategori::factory(3)->create();
+        Bahan::factory(20)->create();
+        Resep::factory(10)->create();
+
+        $this->call(BahanResepSeeder::class);
     }
 }
